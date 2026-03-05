@@ -1,76 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Tide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Hello, GitHub Pages!</h1>
-    <p>This is my first live website.</p>
+  <!-- You can keep your "Hello" section if you want -->
+  <h1>Hello, GitHub Pages!</h1>
+  <p>This is my first live website.</p>
+
+  <!-- Task Tide app -->
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Organize your day</p>
+      <h1>Task Tide</h1>
+      <p class="subtitle">Small wins, one checkbox at a time.</p>
+    </header>
+
+    <section class="panel" aria-label="To-do app">
+      <form id="todo-form" class="todo-form" autocomplete="off">
+        <label for="todo-input" class="sr-only">Add a task</label>
+        <input id="todo-input" type="text" placeholder="What needs to get done?" maxlength="120" required />
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="controls">
+        <div class="filters" role="tablist" aria-label="Task filter">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="active">Active</button>
+          <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <button id="clear-completed" class="ghost-btn" type="button">Clear Completed</button>
+      </div>
+
+      <p id="task-count" class="task-count" aria-live="polite"></p>
+      <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <template id="todo-item-template">
+    <li class="todo-item">
+      <label class="todo-check-wrap">
+        <input type="checkbox" class="todo-check" />
+        <span class="check-ui" aria-hidden="true"></span>
+      </label>
+      <span class="todo-text"></span>
+      <div class="todo-actions">
+        <button type="button" class="icon-btn edit-btn" aria-label="Edit task">Edit</button>
+        <button type="button" class="icon-btn delete-btn" aria-label="Delete task">Delete</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
 </body>
-</html><!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Tide</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main class="app-shell">
-      <header class="hero">
-        <p class="eyebrow">Organize your day</p>
-        <h1>Task Tide</h1>
-        <p class="subtitle">Small wins, one checkbox at a time.</p>
-      </header>
-
-      <section class="panel" aria-label="To-do app">
-        <form id="todo-form" class="todo-form" autocomplete="off">
-          <label for="todo-input" class="sr-only">Add a task</label>
-          <input
-            id="todo-input"
-            type="text"
-            placeholder="What needs to get done?"
-            maxlength="120"
-            required
-          />
-          <button type="submit">Add</button>
-        </form>
-
-        <div class="controls">
-          <div class="filters" role="tablist" aria-label="Task filter">
-            <button type="button" class="filter-btn active" data-filter="all">All</button>
-            <button type="button" class="filter-btn" data-filter="active">Active</button>
-            <button type="button" class="filter-btn" data-filter="completed">Completed</button>
-          </div>
-          <button id="clear-completed" class="ghost-btn" type="button">Clear completed</button>
-        </div>
-
-        <p id="task-count" class="task-count" aria-live="polite"></p>
-
-        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
-      </section>
-    </main>
-
-    <template id="todo-item-template">
-      <li class="todo-item">
-        <label class="todo-check-wrap">
-          <input type="checkbox" class="todo-check" />
-          <span class="check-ui" aria-hidden="true"></span>
-        </label>
-        <span class="todo-text"></span>
-        <div class="todo-actions">
-          <button type="button" class="icon-btn edit-btn" aria-label="Edit task">Edit</button>
-          <button type="button" class="icon-btn delete-btn" aria-label="Delete task">Delete</button>
-        </div>
-      </li>
-    </template>
-
-    <script src="script.js"></script>
-  </body>
 </html>
